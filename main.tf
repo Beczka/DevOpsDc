@@ -30,8 +30,3 @@ module "dev-env" {
   common_tags   = "${local.common_tags}"
   env           = "Dev"
 }
-
-
-output "test" {
-  value = "${module.dev-env.certificate_data}"
-}
