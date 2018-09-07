@@ -23,10 +23,15 @@ variable "administrator_login" {
    type = "string"
 }
 
-variable "firewall_start_ip_address" {
-   type = "string"
+variable "firewall_rules" {
+  type    = "list"
 }
 
-variable "firewall_end_ip_address" {
-   type = "string"
+variable "subnet_ids" {
+  type = "list"
+  default = []
+}
+
+variable "networks_count" {
+  default = "1"
 }

@@ -16,14 +16,18 @@ resource "azurerm_storage_table" "storage-table" {
 
 module "storage_primary_cs" {
   source    = "../kv/store_secret"
-  name      = "storage-primary-cs"
   vault_uri = "${var.vault_url}"
-  value_to_store = "${azurerm_storage_account.storage-account.primary_connection_string }"
+  secrets = [{
+    name      = "storage-primary-cs"
+    value_to_store = "${azurerm_storage_account.storage-account.primary_connection_string }"
+  }]
 }
 
 module "storage_secondary_cs" {
   source    = "../kv/store_secret"
-  name      = "storage-secondary-cs"
   vault_uri = "${var.vault_url}"
-  value_to_store = "${azurerm_storage_account.storage-account.secondary_connection_string }"
+  secrets = [{
+    name      = "storage-secondary-cs"
+    value_to_store = "${azurerm_storage_account.storage-account.secondary_connection_string }"
+  }]
 }

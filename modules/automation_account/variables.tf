@@ -11,19 +11,14 @@ variable "resource_group_name" {
     type = "string"
 }
 
-variable "server_name" {
+variable "name" {
     type = "string"
 }
 
-variable "databases" {
-  type = "list"
+variable sku {
+ type = "string"
 }
 
-variable vault_url {
+variable vault_id {
    type = "string"
-}
-
-variable count {
-  type ="string"
-  default = "1"
 }

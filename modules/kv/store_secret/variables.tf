@@ -1,16 +1,12 @@
-variable "name" {
-  type = "string"
-}
-
-variable "value_to_store" {
-   type = "string"
-}
-
 variable "vault_uri" {
   type = "string"
 }
 
-variable "tags" {
-  type    = "map"
-  default = {}
+variable "secrets" {
+  type    = "list"
+}
+
+variable "count" {
+  type ="string"
+  default = "1"
 }

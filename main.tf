@@ -23,10 +23,10 @@ terraform {
   }
 }
 
-
 module "dev-env" {
   source        = "./envs/dev"
   region        = "WestEurope"
   common_tags   = "${local.common_tags}"
+  address_space = "10.0.0.0/16"
   env           = "Dev"
 }

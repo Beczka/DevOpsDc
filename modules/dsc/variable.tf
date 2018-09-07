@@ -1,0 +1,3 @@
+variable automationAccountId {
+ type = "string"
+}
